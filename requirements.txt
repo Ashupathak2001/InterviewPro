@@ -73,6 +73,7 @@ markdown-it-py
 MarkupSafe
 matplotlib
 mdurl
+mysql-connector-python
 mediapipe
 ml_dtypes
 mtcnn
@@ -154,7 +155,6 @@ uritemplate
 urllib3
 wasabi
 watchdog
-Wave
 weasel
 websockets
 Werkzeug
