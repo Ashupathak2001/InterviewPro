@@ -12,8 +12,8 @@ pdfminer.six
 SpeechRecognition==3.13.0
 beautifulsoup4
 lxml
-opencv-contrib-python==4.11.0.86
-mediapipe==0.10.21
+opencv-contrib-python==4.9.0.80
+mediapipe==0.10.0
 spacy==3.7.5
 nltk
 textblob
