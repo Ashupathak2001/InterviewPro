@@ -1330,8 +1330,8 @@ def main():
     # Main header
     st.markdown("""
     <div class="main-header">
-        <h1>🎯 InterviewPro</h1>
-        <p>Your AI-Powered Interview Coach</p>
+        <h1>🎯 ForgeMe</h1>
+        <p>Your AI-Powered Interview Simulator</p>
     </div>
     """, unsafe_allow_html=True)
 

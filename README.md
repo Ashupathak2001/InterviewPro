@@ -1,98 +1,95 @@
-# InterviewPro: AI Response Analyzer
+# 🔥 ForgeMe – AI-Powered Mock Interview Simulator
 
-InterviewPro is an AI-powered application designed to simulate mock interviews, analyze responses, and provide personalized feedback. The application leverages advanced AI models to help users refine their answers and track progress over time.
-
----
-
-## Features
-- **Mock Interview Sessions:**
-  - Choose topics and answer pre-defined questions.
-  - Record audio and video for real-time analysis.
-- **AI-Driven Feedback:**
-  - Assess relevance, clarity, depth, and communication.
-  - Generate detailed feedback and improved answers using Cohere's API.
-- **Performance Metrics:**
-  - Sentiment analysis and facial expression evaluation.
-  - Overall scores and key phrase extraction.
-- **Progress Tracking:**
-  - Interactive bar and radar charts for visualizing progress.
-  - Data export and summary views.
-- **Customizable Settings:**
-  - Reset progress and toggle dark mode.
+ForgeMe is a powerful AI-based mock interview platform that helps candidates prepare for real-world job interviews by simulating HR and technical interview rounds. It offers **real-time feedback** on verbal responses (speech) and non-verbal cues (eye contact, facial focus), helping you forge a more confident and job-ready version of yourself.
 
 ---
 
-## Installation
+## 🎯 Features
 
-1. Clone the repository:
-```bash
-git clone <your-repository-url>
-cd <repository-name>
-```
+### 🧠 AI-Powered Answer Evaluation
+- Converts speech to text using `SpeechRecognition`.
+- Uses **Cohere LLM** or **Gemini LLM** to analyze:
+  - Answer relevance
+  - Confidence and fluency
+  - Key phrase and topic coverage
+  - Improvement suggestions
 
-2. Install requirements
-```bash
+### 👀 Real-Time Webcam Analysis
+- Captures and analyzes **eye contact** via **OpenCV** and **MediaPipe**.
+- Flags distraction, eyes movement, or camera avoidance in real time.
+
+### 🎤 Speech Metrics
+- Tracks speaking time, hesitations, and filler words.
+- Highlights areas of improvement in tone and pace.
+
+### 🧾 Candidate Profile Management
+- Candidate must complete a short profile (name, email, career level, domain).
+- Profiles and history stored securely in **SQLite**.
+
+### 🖥️ Coding Question Practice 
+- Pulls coding questions randomly from a spreadsheet dataset.
+- Candidate answers in a timed environment.
+- (Planned) LLM-based code quality feedback.
+
+### 📊 Performance Dashboard
+- Visual charts for speaking activity and webcam consistency.
+- Stores and displays past mock sessions.
+- Personalized tips after each session.
+
+---
+
+## 🚀 Demo
+
+> Coming Soon: [Link to Hugging Face / Streamlit Cloud Deployment]
+
+---
+
+## 🧱 Tech Stack
+
+| Layer       | Tools Used                                      |
+|-------------|-------------------------------------------------|
+| UI          | Streamlit (custom components, layout, theming)  |
+| Speech      | SpeechRecognition                               |
+| Vision      | OpenCV, MediaPipe (eye tracking)                |
+| LLM         | Cohere API, Gemini API                          |
+| Database    | SQLite (user profiles, session history)         |
+| Deployment  | Docker (PyAudio, OpenCV, MediaPipe support)     |
+
+---
+
+## 📦 Installation
+
+> ⚠️ Requires Python 3.10+
+
+
+# Clone the repository
+git clone https://github.com/yourusername/forgeme.git
+cd forgeme
+
+# Install dependencies
 pip install -r requirements.txt
-python -m spacy download en_core_web_md
-```
 
-3. Run the application:
-```bash
+# Start the app
 streamlit run main.py
-```
 
-### Prerequisites
-- Python 3.8+
-- Environment variable `COHERE_API_KEY` (from Cohere)
-- FFmpeg (for audio-video processing)
+# Optional Build
+docker build -t forgeme .
+docker run -p 8501:8501 forgeme
 
-### Steps
-1. Clone the repository:
-   ```bash
-   git clone <repository-url>
-   cd InterviewPro
-   ```
-2. Install dependencies:
-   ```bash
-   pip install -r requirements.txt
-   ```
-3. Create a `.env` file with your Cohere API key:
-   ```env
-   COHERE_API_KEY=your_api_key_here
-   ```
-4. Run the application:
-   ```bash
-   streamlit run app.py
-   ```
+# Configuration
+GEMINI_API_KEY=your_key_here
+COHERE_API_KEY=your_key_here
 
----
+# ✨ Inspiration
+Interview prep is often stressful and unstructured. ForgeMe solves this by providing an intelligent, structured, and real-time simulated experience — so you're not just practicing, you're evolving.
 
-## Usage
+# 👨‍💻 Author
+Ashish Pathak 
+🔗 LinkedIn •
+💻 GitHub •
+📧 Email: ashupathak22@gmail.com
 
-1. **Start the Application:** Open the app in your browser via Streamlit's local URL.
-2. **Mock Interviews:** Navigate to the "Interview Practice" tab to select topics and answer questions.
-3. **Analyze Responses:** Receive immediate feedback and scores after each session.
-4. **Track Progress:** Use the "Progress Tracker" tab to visualize performance.
-5. **Settings:** Reset data or submit feedback using the "Settings" tab.
-
----
-
-## Contributing
-1. Fork the repository.
-2. Create a new feature branch.
-3. Submit a pull request with detailed changes.
-
----
-
-## License
-This project is open-sourced under the MIT License. See the `LICENSE` file for more information.
-
----
-
-## Acknowledgments
-- Cohere API for text generation and analysis.
-- Plotly for creating dynamic visualizations.
-- Streamlit for building the interactive user interface.
-
+📝 License
+This project is licensed under the MIT License.
 
 
