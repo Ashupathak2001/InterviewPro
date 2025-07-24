@@ -1256,7 +1256,7 @@ if 'questions_handler' not in st.session_state:
 
 def main():
     st.set_page_config(
-        page_title="InterviewPro - AI Interview Coach",
+        page_title="ForgeMe",
         page_icon="🎯",
         layout="wide",
         initial_sidebar_state="expanded"
@@ -1379,7 +1379,7 @@ def main():
     # ✅ Footer at the very end
     st.markdown("""
     <div class="footer">
-        © 2025 InterviewPro | Made with ❤️ by Ashish Pathak
+        © 2025 ForgeMe | Made with ❤️ by Ashish Pathak
     </div>
     """, unsafe_allow_html=True)
 
@@ -1475,13 +1475,13 @@ def show_profile_setup():
         st.rerun()
 
 def show_dashboard():
-    st.title("📊 Your Interview Performance Dashboard")
+    st.title("📊 Performance Dashboard")
     
     # Get user sessions
     user_sessions = st.session_state.db_manager.get_user_sessions(st.session_state.user_id)
     
     if not user_sessions:
-        st.info("👋 Welcome to InterviewPro! Start with your first practice interview to see your progress here.")
+        st.info("👋 Welcome to ForgeMe! Start with your first practice interview to see your progress here.")
         if st.button("🚀 Start First Interview"):
             st.session_state.page = "🎤 Practice Interview"
             st.rerun()
