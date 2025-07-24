@@ -1,21 +1,49 @@
 import requests
-def generate_company_insights(company_name: str) -> str:
-    prompt = f'''
-You are a career assistant helping a candidate prepare for an interview.
+import os
+from typing import Dict, Any
+from dotenv import load_dotenv
+import google.generativeai as genai
 
-Provide a structured company overview for **{company_name}** that includes:
-1. Brief Overview
-2. Key Products or Services
-3. Common Roles/Departments
-4. Common Interview Questions
-5. Latest Industry Trends affecting this company
-6. Strategic Questions to Ask the Interviewer
+load_dotenv()
+GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
 
-Give the response in a clean Markdown-style format.
+genai.configure(api_key=GEMINI_API_KEY)
+model = genai.GenerativeModel("gemini-2.5-flash")
+
+
+def generate_company_insights(company_name: str) -> Dict[str, Any]:
+    """
+    Generates a structured company overview using the Gemini API.
+    """
+    system_prompt = f'''
+**Company Overview for {company_name}**
+**Brief Overview:**
+- Provide a concise summary of the company's mission, vision, and values.
+**Key Products or Services:**
+- List the main products or services offered by the company.
+**Common Roles/Departments:**
+- Identify typical roles or departments candidates might apply to.
+**Common Interview Questions:**
+- Provide a list of common interview questions candidates might face.
+**Latest Industry Trends:**
+- Discuss recent trends in the industry that may impact the company.
+**Strategic Questions to Ask the Interviewer:**
+- Suggest insightful questions candidates can ask during the interview.
+
+Ensure the response is well-structured, informative, and relevant to the company.
 '''
-
-    response = requests.post(
-        "http://localhost:11434/api/generate",
-        json={"model": "tinyllama", "prompt": prompt, "stream": False}
-    )
-    return response.json()["response"].strip()
+    try:
+        response = model.generate_content(
+            contents=system_prompt
+        )
+        return {
+            "company_name": company_name,
+            "insights": response.text.strip()
+        }
+    except Exception as e:
+        # It's good practice to handle potential errors from the API call
+        print(f"An error occurred while generating insights: {e}")
+        return {
+            "company_name": company_name,
+            "insights": "Could not retrieve company insights at this time."
+        }
