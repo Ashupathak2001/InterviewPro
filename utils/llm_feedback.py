@@ -86,11 +86,11 @@ Return your feedback strictly in this JSON format:
 """
 
     user_prompt = f"""
-Question Type: {question_type}
-Question: {question}
+Question Type: {json.dumps(question_type)}
+Question: {json.dumps(question)}
 
 Candidate's Answer:
-\"\"\"{transcription}\"\"\"
+\"\"\"{json.dumps(transcription)}\"\"\"
 
 Please analyze this response thoroughly and provide detailed feedback to help the candidate improve their interview performance.
 """
