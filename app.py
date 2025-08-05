@@ -23,9 +23,6 @@ import queue
 import threading
 import os
 from PIL import Image
-import random
-import secrets
-import string
 
 from db_manager import (
     User, UserProfile, PracticeSession, UserAchievement,
