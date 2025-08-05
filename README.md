@@ -75,7 +75,7 @@ cd forgeme
 pip install -r requirements.txt
 
 # Start the app
-streamlit run main.py
+streamlit run app.py
 
 # Optional Build
 docker build -t forgeme .
@@ -83,7 +83,6 @@ docker run -p 8501:8501 forgeme
 
 # Configuration
 GEMINI_API_KEY=your_key_here
-COHERE_API_KEY=your_key_here
 
 # ✨ Inspiration
 Interview prep is often stressful and unstructured. ForgeMe solves this by providing an intelligent, structured, and real-time simulated experience — so you're not just practicing, you're evolving.
