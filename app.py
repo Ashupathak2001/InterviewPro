@@ -33,12 +33,12 @@ from db_manager import (
 )
 
 # Enhanced imports for new features
-# from textblob import TextBlob
+from textblob import TextBlob
 import requests
 import PyPDF2
-# from io import BytesIO
-# import asyncio
-# import websockets
+from io import BytesIO
+import asyncio
+import websockets
 from concurrent.futures import ThreadPoolExecutor
 import logging
 from speech_recognition import Recognizer, Microphone, WaitTimeoutError, UnknownValueError, RequestError

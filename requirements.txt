@@ -22,3 +22,8 @@ pypdf
 python-dotenv
 PyMuPDF
 pydocx
+pypdf2
+textblob
+scikit-learn
+scipy
+nltk
