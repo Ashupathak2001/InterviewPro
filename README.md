@@ -8,7 +8,7 @@ ForgeMe is a powerful AI-based mock interview platform that helps candidates pre
 
 ### 🧠 AI-Powered Answer Evaluation
 - Converts speech to text using `SpeechRecognition`.
-- Uses **Cohere LLM** or **Gemini LLM** to analyze:
+- Uses **Gemini LLM** to analyze:
   - Answer relevance
   - Confidence and fluency
   - Key phrase and topic coverage
@@ -30,6 +30,11 @@ ForgeMe is a powerful AI-based mock interview platform that helps candidates pre
 - Pulls coding questions randomly from a spreadsheet dataset.
 - Candidate answers in a timed environment.
 - (Planned) LLM-based code quality feedback.
+
+### ATS Score Checker and Company Research
+- Candidate check Resume ATS Score based on ROles
+- Company Research Easy
+- Extra Help - Job Description Based Questions and Tips
 
 ### 📊 Performance Dashboard
 - Visual charts for speaking activity and webcam consistency.
